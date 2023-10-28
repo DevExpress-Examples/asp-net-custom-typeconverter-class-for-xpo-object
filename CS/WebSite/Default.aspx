@@ -13,19 +13,13 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <dx:ASPxGridView ID="grid" runat="server" AutoGenerateColumns="False" DataSourceID="xds"
-            KeyFieldName="Oid">
+        <dx:ASPxGridView ID="grid" runat="server" AutoGenerateColumns="False" DataSourceID="xds" KeyFieldName="Oid">
             <Columns>
-                <dx:GridViewCommandColumn VisibleIndex="0" ShowEditButton="True"/>
-                <dx:GridViewDataTextColumn FieldName="Oid" ReadOnly="True" VisibleIndex="1">
-                    <EditFormSettings Visible="False" />
-                </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Child!Key" VisibleIndex="2">
-                </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Child!.ChildName" VisibleIndex="3">
-                </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Name" VisibleIndex="4">
-                </dx:GridViewDataTextColumn>
+                <dx:GridViewCommandColumn ShowEditButton="True"/>
+                <dx:GridViewDataTextColumn FieldName="Oid" ReadOnly="True" />
+                <dx:GridViewDataTextColumn FieldName="Child!Key" />
+                <dx:GridViewDataTextColumn FieldName="Child!.ChildName" />
+                <dx:GridViewDataTextColumn FieldName="Name" />
             </Columns>
             <Templates>
                 <EditForm>
@@ -43,22 +37,16 @@
                                 Name:
                             </td>
                             <td>
-                                <dx:ASPxTextBox ID="name" runat="server" Value='<%# Bind("Name") %>' Width="170px">
-                                </dx:ASPxTextBox>
+                                <dx:ASPxTextBox ID="name" runat="server" Value='<%# Bind("Name") %>' Width="170px" />
                             </td>
                         </tr>
                     </table>
-                    <dx:ASPxGridViewTemplateReplacement ID="update" ReplacementType="EditFormUpdateButton"
-                        runat="server">
-                    </dx:ASPxGridViewTemplateReplacement>
-                    <dx:ASPxGridViewTemplateReplacement ID="cancel" ReplacementType="EditFormCancelButton"
-                        runat="server">
-                    </dx:ASPxGridViewTemplateReplacement>
+                    <dx:ASPxGridViewTemplateReplacement ID="update" ReplacementType="EditFormUpdateButton" runat="server" />
+                    <dx:ASPxGridViewTemplateReplacement ID="cancel" ReplacementType="EditFormCancelButton" runat="server" />
                 </EditForm>
             </Templates>
         </dx:ASPxGridView>
-        <dx:XpoDataSource ID="xds" runat="server" TypeName="ParentObject">
-        </dx:XpoDataSource>
+        <dx:XpoDataSource ID="xds" runat="server" TypeName="ParentObject" />
     </div>
     </form>
 </body>
