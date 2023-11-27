@@ -8,11 +8,12 @@
 **[[Run Online]](https://codecentral.devexpress.com/128540757/)**
 <!-- run online end -->
 
-[ASPxGridView](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridView) caches object properties used in data-binding expressions. If you use XPO or custom objects that use a referenced association, the ASPxGridView tries to cache references too. Unfortunately, the caching operation (similar to the ToString method) is performed smoothly, but the object restoration from cache (from String to object) could be raised with an exception:</p><p><i>TypeConverter cannot convert from System.String.</i></p><p>A solution is to turn off the <a href="http://documentation.devexpress.com/#AspNet/DevExpressWebASPxGridViewASPxGridView_EnableRowsCachetopic">ASPxGridView.EnableRowsCache</a> property. This solution is acceptable when the page doesn't have several grids, and in most cases doesn't affect page performance too much.</p><p>However you can implement a custom TypeConverter derived class, that can convert from the String type correctly.</p><p>By the way, it isn't recommended to serialize objects often, because serialized objects take much space, and the page size might become big (e.g. more than 1 mb).</p><p><strong>See Also:</strong><br />
-<a href="http://msdn.microsoft.com/en-us/library/ayybcxe5.aspx">How to: Implement a Type Converter</a><br />
-<a href="http://www.codeproject.com/KB/dotnet/BasicPropertyGrid.aspx">Introduction to the TypeConverter</a></p>
+[ASPxGridView](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridView) caches object properties used in data-binding expressions. If you use XPO or custom objects that use a referenced association, the ASPxGridView tries to cache references too. Since the caching operation is similar to the `ToString` method and is performed smoothly, the object restoration from cache (from `String` to object) can be raised with the following exception: _TypeConverter cannot convert from System.String_.
 
+This example demonstrates how to implement a custom **TypeConverter** class that can convert from the `String` type correctly.
 
+> [!NOTE]
+> It is not recommended to serialize objects often, because serialized objects take much space, and the page size might become big.
 
 ## Files to Review
 
@@ -21,3 +22,7 @@
 * [Default.aspx](./CS/WebSite/Default.aspx)
 * [Default.aspx.cs](./CS/WebSite/Default.aspx.cs)
 * [Global.asax](./CS/WebSite/Global.asax)
+
+## Documentation
+
+*[How to: Implement a Type Converter](https://learn.microsoft.com/en-us/previous-versions/ayybcxe5(v=vs.140))
