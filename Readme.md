@@ -8,7 +8,7 @@
 **[[Run Online]](https://codecentral.devexpress.com/128540757/)**
 <!-- run online end -->
 
-[ASPxGridView](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridView) caches object properties used in data-binding expressions. If you bind grid to an XPO or custom objects that use a referenced association, the ASPxGridView tries to cache references too. Since the caching operation is similar to the `ToString` method and is performed smoothly, the object restoration from cache (from `String` to object) can be raised with the following exception: _TypeConverter cannot convert from System.String_.
+The [ASPxGridView](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridView) control caches object properties used in data-binding expressions. If you bind a grid to an XPO or custom objects that use a referenced association, the control tries to cache references too. Since the caching operation is similar to the `ToString` method and is performed smoothly, the object restoration from cache (from `String` to object) can be raised with the following exception: _TypeConverter cannot convert from System.String_.
 
 This example demonstrates how to implement a custom **TypeConverter** class that can convert from the `String` type correctly.
 
